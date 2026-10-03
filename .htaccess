@@ -1,0 +1,55 @@
+# ==============================================================================
+# Portfolio Website .htaccess
+# Handles 404 errors, security rules, and Apache performance optimizations
+# ==============================================================================
+
+# Disable directory browsing
+Options -Indexes
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# ------------------------------------------------------------------------------
+# 404 Error Handling
+# ------------------------------------------------------------------------------
+# Apache standard ErrorDocument fallback
+ErrorDocument 404 /404.php
+
+# URL Rewriting for clean 404 routing
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If the requested file or directory does not exist, route to 404.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ 404.php [L]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# Security Protections
+# ------------------------------------------------------------------------------
+# Block access to hidden files and sensitive file extensions (.git, .env, .sql, etc.)
+<FilesMatch "(^\.|\.(sql|env|ini|log|bak|config|sh|inc|swp|dist)|~)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Security HTTP Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# Compression & Caching (SEO & Performance)
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>

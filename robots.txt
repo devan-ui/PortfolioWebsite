@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /uploads/resumes/
+
+Sitemap: https://devanandancs.kesug.com/sitemap.xml

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgGrad)" />
+  <rect x="60" y="40" width="680" height="370" rx="12" fill="#162032" stroke="#334155" stroke-width="2" />
+  <rect x="60" y="40" width="680" height="38" rx="12" fill="#1e293b" />
+  <circle cx="85" cy="59" r="6" fill="#ef4444" />
+  <circle cx="105" cy="59" r="6" fill="#f59e0b" />
+  <circle cx="125" cy="59" r="6" fill="#10b981" />
+  
+  <rect x="180" y="50" width="440" height="18" rx="4" fill="#0f172a" />
+  <text x="400" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">https://devanandancs.dev/preview</text>
+
+  <!-- Developer Illustration / Blueprint -->
+  <path d="M260 220 L340 160 L340 280 Z" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" stroke-linecap="round" opacity="0.9" />
+  <path d="M540 220 L460 160 L460 280 Z" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" stroke-linecap="round" opacity="0.9" />
+  <path d="M370 270 L430 170" stroke="#10b981" stroke-width="8" stroke-linecap="round" opacity="0.9" />
+
+  <text x="400" y="340" font-family="'Outfit', sans-serif" font-size="22" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="1">PROJECT SHOWCASE</text>
+  <text x="400" y="370" font-family="'JetBrains Mono', monospace" font-size="13" fill="#94a3b8" text-anchor="middle">Full Stack Architecture &amp; Database Implementation</text>
+</svg>
